@@ -1,7 +1,7 @@
-import jwt from "jsonwebtoken";
-
-// Function to generate a token for a user
-export const generateToken = (userId)=>{
-    const token = jwt.sign({userId}, process.env.JWT_SECRET);
-    return token;
+export function formatMessageTime(date){
+    return new Date(date).toLocaleTimeString("en-US",{
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false,
+    })
 }
